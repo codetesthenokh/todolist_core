@@ -72,6 +72,19 @@ class ToDoListController extends Controller
     }
 
     /**
+     * Show to do list by user ID and to do list ID
+     * 
+     * @param string
+     * @param string
+     * @return json
+     */
+    public function getIncompleteCount($user_id) {
+        $whereclause = ['user_id' => $user_id, 'is_completed' => 0];
+        $todolist = ToDoList::where($whereclause)->get();
+        return  response()->json(count($todolist));
+    }
+
+    /**
      * Format due date by date and time
      * 
      * @param string

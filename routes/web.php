@@ -23,6 +23,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->delete('todolist', ['uses' => 'ToDoListController@delete']);
     $router->put('todolist/{id}', ['uses' => 'ToDoListController@update']);
     $router->put('todolistcomplete/{id}', ['uses' => 'ToDoListController@setToDoListComplete']);
+    $router->get('incompletecount/{user_id}', ['uses' => 'ToDoListController@getIncompleteCount']);
 
     $router->get('user',  ['uses' => 'UserController@showAll']);
     $router->get('user/{id}',  ['uses' => 'UserController@show']);
