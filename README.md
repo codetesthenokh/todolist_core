@@ -10,6 +10,7 @@ This application is developed using these technologies with Windows Platform:
 - Composer
 - Lumens
 - Visual Studio Code
+- Add new database on MySQL called `todolist` and grant all access to user `codetesthenokh` with password `password`
 
 ### Steps
 1. Clone git repository
