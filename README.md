@@ -16,6 +16,8 @@ This application is developed using these technologies with Windows Platform:
 Run `git clone https://github.com/codetesthenokh/todolist_core.git`
 2. Install all dependencies
 In Git Bash, go to project directory and run `composer install`
-3. Run server for this application
+3. Migrate Database
+In Git Bash, go to project directory and run `php artisan migrate`
+4. Run server for this application
 In Git Bash, go to project directory and run `php -S localhost:4000 -t public`
 Note: It commands API to run on http://localhost:4000/api
