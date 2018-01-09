@@ -18,37 +18,20 @@ class ToDoListController extends Controller
         return response()->json($todolist, 201);
     }
 
-    // public function update($id, Request $request) {
-    //     $todolist = ToDoList::findOrFail($id);
-    //     $req = $request->all();
-    //     if (isset($req['due_date']) != null && isset($req['due_time']) != null ) {
-    //         $todolist->due_date = $this->formatDateTime($req['due_date'], $req['due_time']);
-    //     }
-    //     // $req['is_completed'] = 0;
-    //     $todolist->title = $req['title'];
-    //     $todolist->description = $req['description'];
-    //     $todolist->priority = $req['priority'];
-    //     // TODO: Read from SESSION for user_id
-    //     $todolist->user_id = 1;
+    /**
+     * Edit to do list item
+     * 
+     * @param string
+     * @param Illuminate\Http\Request
+     * @return json
+     */
+    public function update($id, Request $request) {
+        $todolist = ToDoList::findOrFail($id);
 
-    //     $todolist->update();
+        $todolist->update($request->all());
 
-    //     return response()->json($todolist, 200);
-    // }
-
-    // public function delete($id) {
-    //     ToDoList::findOrFail($id)->delete();
-    //     return response('Deleted Successfully', 200);
-    // }
-
-    //  /**
-    //  * Show all to do lists
-    //  * 
-    //  * @return json response
-    //  */
-    // public function showAll() {
-    //     return  response()->json(ToDoList::all());
-    // }
+        return response()->json($todolist, 200);
+    }
 
      /**
      * Show to do list by user ID and to do list ID
@@ -98,4 +81,18 @@ class ToDoListController extends Controller
     private function formatDateTime($date, $time) {
         return $date . ' ' .$time;
     }
+
+    // public function delete($id) {
+    //     ToDoList::findOrFail($id)->delete();
+    //     return response('Deleted Successfully', 200);
+    // }
+
+    //  /**
+    //  * Show all to do lists
+    //  * 
+    //  * @return json response
+    //  */
+    // public function showAll() {
+    //     return  response()->json(ToDoList::all());
+    // }
 }
