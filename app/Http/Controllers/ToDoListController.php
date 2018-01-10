@@ -94,18 +94,4 @@ class ToDoListController extends Controller
     private function formatDateTime($date, $time) {
         return $date . ' ' .$time;
     }
-
-    // public function delete($id) {
-    //     ToDoList::findOrFail($id)->delete();
-    //     return response('Deleted Successfully', 200);
-    // }
-
-    //  /**
-    //  * Show all to do lists
-    //  * 
-    //  * @return json response
-    //  */
-    // public function showAll() {
-    //     return  response()->json(ToDoList::all());
-    // }
 }

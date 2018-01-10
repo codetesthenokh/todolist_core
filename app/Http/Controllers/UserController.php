@@ -19,21 +19,19 @@ class UserController extends Controller
         return response()->json($todolist, 201);
     }
 
+    /**
+     * Edit a user
+     * 
+     * @param string
+     * @param Illuminate\Http\Request
+     * @return json response
+     */
     public function update($id, Request $request) {
         $todolist = User::findOrFail($id);
         $todolist->update($request->all());
 
         return response()->json($todolist, 200);
     }
-
-    // public function delete($id) {
-    //     User::findOrFail($id)->delete();
-    //     return response('Deleted Successfully', 200);
-    // }
-
-    // public function showAll() {
-    //     return response()->json(User::all());
-    // }
 
     /**
      * Get user by ID
