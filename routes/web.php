@@ -18,7 +18,7 @@ $router->get('/', function () use ($router) {
 $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('todolist',  ['uses' => 'ToDoListController@showAll']);
     $router->get('todolist/{user_id}/{id}',  ['uses' => 'ToDoListController@show']);
-    $router->get('todolistByUserId/{user_id}',  ['uses' => 'ToDoListController@showByUserId']);
+    $router->get('todolistbyuserid/{user_id}',  ['uses' => 'ToDoListController@showByUserId']);
     $router->post('todolist', ['uses' => 'ToDoListController@create']);
     $router->delete('todolist', ['uses' => 'ToDoListController@delete']);
     $router->put('todolist/{id}', ['uses' => 'ToDoListController@update']);

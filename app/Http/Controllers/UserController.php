@@ -44,4 +44,17 @@ class UserController extends Controller
     public function show($id) {
         return response()->json(User::find($id));
     }
+
+    /**
+     * Login
+     * 
+     * @param Illuminate\Http\Request
+     * @return json
+     */
+    public function login(Request $request) {
+        $req = $request->all();
+        $whereclause = ['email' => $req["email"], 'password' => $req["password"]];
+        $user_login = User::where($whereclause)->first();
+        return response()->json($user_login);
+    }
 }
